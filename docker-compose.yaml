@@ -1,0 +1,120 @@
+version: "3.9"
+
+x-networks: &networks
+  networks:
+    - ac-network
+
+x-ac-shared-conf: &ac-shared-conf
+  <<: *networks
+  working_dir: /azerothcore
+  depends_on:
+    ac-database:
+      condition: service_healthy
+
+services:
+  ac-database:
+    <<: *networks
+    image: hwlim78/acore-docker-master-ac-database-1:7.0.0-dev.1
+    restart: unless-stopped
+    cap_add:
+      - SYS_NICE
+    ports:
+      - ${DOCKER_DB_EXTERNAL_PORT:-3306}:3306
+    expose:
+      - 3306
+    command: --authentication-policy=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DOCKER_DB_ROOT_PASSWORD:-password}
+      - MYSQL_ROOT_HOST=%
+    volumes:
+      - type: volume
+        source: ac-database
+        target: /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=${DOCKER_DB_ROOT_PASSWORD:-password}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  ac-worldserver:
+    container_name: acore-docker-ac-worldserver-1
+    <<: *ac-shared-conf
+    stdin_open: true
+    tty: true
+    cap_add:
+      - SYS_NICE
+    image: hwlim78/ac-wotlk-worldserver:${DOCKER_IMAGE_TAG:-7.0.0-dev.1}
+    restart: unless-stopped
+    privileged: true
+    user: ${DOCKER_USER:-acore}
+    ports:
+      - ${DOCKER_WORLD_EXTERNAL_PORT:-8085}:8085
+      - ${DOCKER_SOAP_EXTERNAL_PORT:-7878}:7878
+    expose:
+      - 8085
+    volumes:
+      - ./worldserver:/azerothcore/env/dist/data:rw
+      - ./scripts/lua:/azerothcore/env/dist/bin/lua_scripts/scripts
+      - "${DOCKER_VOL_CLIENT_DATA:-ac-client-data}:/azerothcore/env/dist/data:ro"
+    environment:
+      AC_DATA_DIR: "/azerothcore/env/dist/data"
+      AC_LOGS_DIR: "/azerothcore/env/dist/logs"
+      AC_LOGIN_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_auth"
+      AC_WORLD_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_world"
+      AC_CHARACTER_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_characters"
+      AC_CLOSE_IDLE_CONNECTIONS: "0"
+    depends_on:
+      ac-client-data:
+        condition: service_completed_successfully
+      ac-db-import:
+        condition: service_completed_successfully
+
+  ac-authserver:
+    <<: *ac-shared-conf
+    tty: true
+    image: hwlim78/ac-wotlk-authserver:${DOCKER_IMAGE_TAG:-7.0.0-dev.1}
+    restart: unless-stopped
+    ports:
+      - ${DOCKER_AUTH_EXTERNAL_PORT:-3724}:3724
+    expose:
+      - 3724
+    environment:
+      AC_LOGS_DIR: "/azerothcore/env/dist/logs"
+      AC_TEMP_DIR: "/azerothcore/env/dist/temp"
+      AC_LOGIN_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_auth"
+      AC_SQLDRIVER_LOG_FILE: "SQLDriver.log"
+      AC_SQLDRIVER_QUERY_LOGGING: "1"
+    depends_on:
+      ac-database:
+        condition: service_healthy
+      ac-db-import:
+        condition: service_completed_successfully
+
+  ac-client-data:
+    <<: *networks
+    image: hwlim78/ac-wotlk-client-data:${DOCKER_IMAGE_TAG:-7.0.0-dev.1}
+    volumes:
+      - "${DOCKER_VOL_CLIENT_DATA:-ac-client-data}:/azerothcore/env/dist/data"
+
+  ac-db-import:
+    <<: *ac-shared-conf
+    image: hwlim78/ac-wotlk-db-import:${DOCKER_IMAGE_TAG:-7.0.0-dev.1}
+    environment:
+      AC_DISABLE_INTERACTIVE: "1"
+      AC_DATA_DIR: "/azerothcore/env/dist/data"
+      AC_LOGS_DIR: "/azerothcore/env/dist/logs"
+      AC_LOGIN_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_auth"
+      AC_WORLD_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_world"
+      AC_CHARACTER_DATABASE_INFO: "ac-database;3306;root;${DOCKER_DB_ROOT_PASSWORD:-password};acore_characters"
+      AC_CLOSE_IDLE_CONNECTIONS: "0"
+    depends_on:
+      ac-database:
+        condition: service_healthy
+
+volumes:
+  ac-database:
+  ac-client-data:
+
+networks:
+  ac-network:

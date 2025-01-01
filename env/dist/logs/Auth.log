@@ -1,0 +1,62 @@
+AzerothCore rev. c76e70a36422+ 2024-12-22 13:24:03 +0800 (Playerbot branch) (Unix, RelWithDebInfo, Static) (authserver)
+<Ctrl-C> to stop.
+
+   █████╗ ███████╗███████╗██████╗  ██████╗ ████████╗██╗  ██╗
+  ██╔══██╗╚══███╔╝██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝██║  ██║
+  ███████║  ███╔╝ █████╗  ██████╔╝██║   ██║   ██║   ███████║
+  ██╔══██║ ███╔╝  ██╔══╝  ██╔══██╗██║   ██║   ██║   ██╔══██║
+  ██║  ██║███████╗███████╗██║  ██║╚██████╔╝   ██║   ██║  ██║
+  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝
+                                 ██████╗ ██████╗ ██████╗ ███████╗
+                                ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+                                ██║     ██║   ██║██████╔╝█████╗
+                                ██║     ██║   ██║██╔══██╗██╔══╝
+                                ╚██████╗╚██████╔╝██║  ██║███████╗
+                                 ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+     AzerothCore 3.3.5a  -  www.azerothcore.org
+
+> Using configuration file       /azerothcore/env/dist/etc/authserver.conf
+> Using SSL version:             OpenSSL 3.0.2 15 Mar 2022 (library: OpenSSL 3.0.2 15 Mar 2022)
+> Using Boost version:           1.74.0
+ 
+> Config: Found config value 'Updates.EnableDatabases' from environment variable 'AC_UPDATES_ENABLE_DATABASES'.
+> AUTOUPDATER: Automatic database updates are disabled for all databases in the config! This is not recommended!
+> Config: Found config value 'LoginDatabaseInfo' from environment variable 'AC_LOGIN_DATABASE_INFO'.
+Opening DatabasePool 'acore_auth'. Asynchronous connections: 1, synchronous connections: 1.
+MySQL client library: 8.0.40
+MySQL server ver: 8.4.3 
+Connected to MySQL database at ac-database
+MySQL client library: 8.0.40
+MySQL server ver: 8.4.3 
+Connected to MySQL database at ac-database
+DatabasePool 'acore_auth' opened successfully. 2 total connections running.
+ 
+Started auth database connection pool.
+Loading IP Location Database...
+ 
+Added realm "Northrend" at 172.26.16.1:8085.
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Ping MySQL to keep connection alive
+Halting process...
+Closing down DatabasePool 'acore_auth'. Waiting for 0 queries to finish...
+Asynchronous connections on DatabasePool 'acore_auth' terminated. Proceeding with synchronous connections.
+All connections on DatabasePool 'acore_auth' closed.

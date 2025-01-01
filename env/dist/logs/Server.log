@@ -1,0 +1,56 @@
+AzerothCore rev. c76e70a36422+ 2024-12-22 13:24:03 +0800 (Playerbot branch) (Unix, RelWithDebInfo, Static) (worldserver-daemon)
+<Ctrl-C> to stop.
+
+   █████╗ ███████╗███████╗██████╗  ██████╗ ████████╗██╗  ██╗
+  ██╔══██╗╚══███╔╝██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝██║  ██║
+  ███████║  ███╔╝ █████╗  ██████╔╝██║   ██║   ██║   ███████║
+  ██╔══██║ ███╔╝  ██╔══╝  ██╔══██╗██║   ██║   ██║   ██╔══██║
+  ██║  ██║███████╗███████╗██║  ██║╚██████╔╝   ██║   ██║  ██║
+  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝
+                                 ██████╗ ██████╗ ██████╗ ███████╗
+                                ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+                                ██║     ██║   ██║██████╔╝█████╗
+                                ██║     ██║   ██║██╔══██╗██╔══╝
+                                ╚██████╗╚██████╔╝██║  ██║███████╗
+                                 ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+     AzerothCore 3.3.5a  -  www.azerothcore.org
+
+> Using configuration file       /azerothcore/env/dist/etc/worldserver.conf
+> Using SSL version:             OpenSSL 3.0.2 15 Mar 2022 (library: OpenSSL 3.0.2 15 Mar 2022)
+> Using Boost version:           1.74.0
+ 
+Can't set process priority class, error: Permission denied
+ 
+Loading Modules Configuration...
+ 
+Using modules configuration:
+> playerbots.conf.dist
+ 
+Initializing Scripts...
+> Loading C++ scripts
+ 
+> Config: Found config value 'Updates.EnableDatabases' from environment variable 'AC_UPDATES_ENABLE_DATABASES'.
+> AUTOUPDATER: Automatic database updates are disabled for all databases in the config! This is not recommended!
+> Config: Found config value 'LoginDatabaseInfo' from environment variable 'AC_LOGIN_DATABASE_INFO'.
+Opening DatabasePool 'acore_auth'. Asynchronous connections: 1, synchronous connections: 1.
+DatabasePool 'acore_auth' opened successfully. 2 total connections running.
+ 
+> Config: Found config value 'CharacterDatabaseInfo' from environment variable 'AC_CHARACTER_DATABASE_INFO'.
+Opening DatabasePool 'acore_characters'. Asynchronous connections: 1, synchronous connections: 1.
+DatabasePool 'acore_characters' opened successfully. 2 total connections running.
+ 
+> Config: Found config value 'WorldDatabaseInfo' from environment variable 'AC_WORLD_DATABASE_INFO'.
+Opening DatabasePool 'acore_world'. Asynchronous connections: 1, synchronous connections: 1.
+DatabasePool 'acore_world' opened successfully. 2 total connections running.
+ 
+> Config: Found config value 'PlayerbotsDatabaseInfo' from environment variable 'AC_PLAYERBOTS_DATABASE_INFO'.
+Opening DatabasePool 'acore_playerbots'. Asynchronous connections: 1, synchronous connections: 1.
+DatabasePool 'acore_playerbots' opened successfully. 2 total connections running.
+ 
+Database Playerbots is empty, auto populating it...
+>> Directory "/azerothcore/modules/mod-playerbots/data/sql/playerbots/base/" not exist
+Could not populate the Playerbots database, see log for details.
+Closing down DatabasePool 'acore_playerbots'. Waiting for 0 queries to finish...
+Asynchronous connections on DatabasePool 'acore_playerbots' terminated. Proceeding with synchronous connections.
+All connections on DatabasePool 'acore_playerbots' closed.

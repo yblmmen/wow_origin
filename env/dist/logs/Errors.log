@@ -1,0 +1,128 @@
+In mysql_stmt_prepare() id: 22, sql: "SELECT map, position_x, position_y, position_z FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 23, sql: "SELECT position_x, position_y, position_z, orientation, map, taxi_path FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 51, sql: "SELECT COUNT(id) FROM mail WHERE receiver = ? AND (checked & 1) = 0 AND deliver_time <= ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 55, sql: "SELECT mapId, zoneId, posX, posY, posZ FROM character_homebind WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 69, sql: "SELECT creatorGuid, giftCreatorGuid, count, duration, charges, flags, enchantments, randomPropertyId, durability, playedTime, text, item_guid, itemEntry, ii.owner_guid, m.id FROM mail_items mi INNER JOIN mail m ON mi.mail_id = m.id LEFT JOIN item_instance ii ON mi.item_guid = ii.guid WHERE m.receiver = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 72, sql: "SELECT creatorGuid, giftCreatorGuid, count, duration, charges, flags, enchantments, randomPropertyId, durability, playedTime, text, itemguid, itemEntry FROM auctionhouse ah JOIN item_instance ii ON ah.itemguid = ii.guid"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 76, sql: "SELECT id, houseid, itemguid, itemEntry, count, itemowner, buyoutprice, time, buyguid, lastbid, startbid, deposit FROM auctionhouse ah INNER JOIN item_instance ii ON ii.guid = ah.itemguid"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 82, sql: "SELECT id, messageType, sender, receiver, has_items, expire_time, stationery, checked, mailTemplateId FROM mail WHERE expire_time < ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 83, sql: "SELECT item_guid, itemEntry, mail_id FROM mail_items mi INNER JOIN item_instance ii ON ii.guid = mi.item_guid LEFT JOIN mail mm ON mi.mail_id = mm.id WHERE mm.id IS NOT NULL AND mm.expire_time < ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 87, sql: "SELECT player_guid, paidMoney, paidExtendedCost FROM item_refund_instance WHERE item_guid = ? AND player_guid = ? LIMIT 1"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 88, sql: "SELECT allowedPlayers FROM item_soulbound_trade_data WHERE itemGuid = ? LIMIT 1"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 100, sql: "SELECT account FROM characters WHERE name = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 103, sql: "SELECT matchMakerRating, maxMMR  FROM character_arena_stats WHERE guid = ? AND slot = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 113, sql: "SELECT g.guildid, g.name, gr.rname, gm.pnote, gm.offnote FROM guild g JOIN guild_member gm ON g.guildid = gm.guildid JOIN guild_rank gr ON g.guildid = gr.guildid AND gm.`rank` = gr.rid WHERE gm.guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 148, sql: "SELECT name, level, class, gender, zone, account FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 168, sql: "SELECT 1 FROM account_tutorial WHERE accountId = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 189, sql: "SELECT arena_team_member.arenaTeamId FROM arena_team_member JOIN arena_team ON arena_team_member.arenaTeamId = arena_team.arenaTeamId WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 198, sql: "SELECT posX, posY, posZ, orientation, mapId, displayId, itemCache, bytes1, bytes2, guildId, flags, dynFlags, time, corpseType, instanceId, phaseMask, guid FROM corpse WHERE mapId = ? AND instanceId = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 203, sql: "SELECT guid, respawnTime FROM creature_respawn WHERE mapId = ? AND instanceId = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 207, sql: "SELECT guid, respawnTime FROM gameobject_respawn WHERE mapId = ? AND instanceId = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 211, sql: "SELECT id, type, playerGuid, name, description, createTime, mapId, posX, posY, posZ, lastModifiedTime, closedBy, assignedTo, comment, response, completed, escalated, viewed, needMoreHelp, resolvedBy FROM gm_ticket"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 275, sql: "SELECT name, account, map, zone FROM characters WHERE online > 0"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 276, sql: "SELECT guid, deleteInfos_Name, deleteInfos_Account, deleteDate FROM characters WHERE deleteDate IS NOT NULL AND guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 277, sql: "SELECT guid, deleteInfos_Name, deleteInfos_Account, deleteDate FROM characters WHERE deleteDate IS NOT NULL AND deleteInfos_Name LIKE CONCAT('%%', ?, '%%')"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 278, sql: "SELECT guid, deleteInfos_Name, deleteInfos_Account, deleteDate FROM characters WHERE deleteDate IS NOT NULL"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 279, sql: "SELECT guid FROM characters WHERE account = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 280, sql: "SELECT totaltime, level, money, account, race, class, map, zone, gender, health, playerFlags FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 283, sql: "SELECT unbandate, bandate = unbandate, bannedby, banreason FROM character_banned WHERE guid = ? AND active ORDER BY bandate ASC LIMIT 1"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 282, sql: "SELECT SUM(CASE WHEN (checked & 1) THEN 1 ELSE 0 END) AS 'readmail', COUNT(*) AS 'totalmail' FROM mail WHERE `receiver` = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 281, sql: "SELECT a.xp, b.guid FROM characters a LEFT JOIN guild_member b ON a.guid = b.guid WHERE a.guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 284, sql: "SELECT mapId, zoneId, posX, posY, posZ FROM character_homebind WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 285, sql: "SELECT guid, name FROM characters WHERE account = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 286, sql: "SELECT quest_id FROM pool_quest_save WHERE pool_id = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 287, sql: "SELECT at_login FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 288, sql: "SELECT class, level, at_login, knownTitles FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 291, sql: "SELECT at_login, knownTitles, money FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 292, sql: "SELECT id, messageType, mailTemplateId, sender, subject, body, money, has_items FROM mail WHERE receiver = ? AND has_items <> 0 AND cod <> 0"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 293, sql: "SELECT DISTINCT guid FROM character_social WHERE friend = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 294, sql: "SELECT guid, deleteInfos_Account FROM characters WHERE deleteDate IS NOT NULL AND deleteDate < ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 295, sql: "SELECT arena_team_member.arenateamid FROM arena_team_member JOIN arena_team ON arena_team_member.arenateamid = arena_team.arenateamid WHERE guid = ? AND type = ? LIMIT 1"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 297, sql: "SELECT MIN(deliver_time) FROM mail WHERE receiver = ? AND deliver_time > ? AND (checked & 1) = 0 LIMIT 1"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 299, sql: "SELECT COUNT(itemEntry) FROM character_inventory ci INNER JOIN item_instance ii ON ii.guid = ci.item WHERE itemEntry = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 300, sql: "SELECT COUNT(itemEntry) FROM mail_items mi INNER JOIN item_instance ii ON ii.guid = mi.item_guid WHERE itemEntry = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 301, sql: "SELECT COUNT(itemEntry) FROM auctionhouse ah INNER JOIN item_instance ii ON ii.guid = ah.itemguid WHERE itemEntry = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 302, sql: "SELECT COUNT(itemEntry) FROM guild_bank_item gbi INNER JOIN item_instance ii ON ii.guid = gbi.item_guid WHERE itemEntry = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 303, sql: "SELECT ci.item, cb.slot AS bag, ci.slot, ci.guid, c.account, c.name FROM characters c INNER JOIN character_inventory ci ON ci.guid = c.guid INNER JOIN item_instance ii ON ii.guid = ci.item LEFT JOIN character_inventory cb ON cb.item = ci.bag WHERE ii.itemEntry = ? LIMIT ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 304, sql: "SELECT ci.item FROM character_inventory ci INNER JOIN item_instance ii ON ii.guid = ci.item WHERE ii.itemEntry = ? AND ii.owner_guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 305, sql: "SELECT mi.item_guid, m.sender, m.receiver, cs.account, cs.name, cr.account, cr.name FROM mail m INNER JOIN mail_items mi ON mi.mail_id = m.id INNER JOIN item_instance ii ON ii.guid = mi.item_guid INNER JOIN characters cs ON cs.guid = m.sender INNER JOIN characters cr ON cr.guid = m.receiver WHERE ii.itemEntry = ? LIMIT ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 306, sql: "SELECT  ah.itemguid, ah.itemowner, c.account, c.name FROM auctionhouse ah INNER JOIN characters c ON c.guid = ah.itemowner INNER JOIN item_instance ii ON ii.guid = ah.itemguid WHERE ii.itemEntry = ? LIMIT ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 307, sql: "SELECT gi.item_guid, gi.guildid, g.name FROM guild_bank_item gi INNER JOIN guild g ON g.guildid = gi.guildid INNER JOIN item_instance ii ON ii.guid = gi.item_guid WHERE ii.itemEntry = ? LIMIT ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 344, sql: "SELECT standing FROM character_reputation WHERE faction = ? AND guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 394, sql: "SELECT maxhealth, strength, agility, stamina, intellect, spirit, armor, attackPower, spellPower, resilience FROM character_stats WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 429, sql: "SELECT containerGUID, itemid, item_index, count, randomPropertyId, randomSuffix, follow_loot_rules, freeforall, is_blocked, is_counted, is_underthreshold, needs_quest, conditionLootId FROM item_loot_storage"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 420, sql: "SELECT id FROM character_pet WHERE owner = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 433, sql: "SELECT MAX(id) FROM pvpstats_battlegrounds"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 436, sql: "SELECT winner_faction, COUNT(*) AS count FROM pvpstats_battlegrounds WHERE DATEDIFF(NOW(), date) < 7 GROUP BY winner_faction ORDER BY winner_faction ASC"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 437, sql: "SELECT character_guid, COUNT(character_guid) AS count, characters.name as character_name FROM pvpstats_players INNER JOIN pvpstats_battlegrounds ON pvpstats_players.battleground_id = pvpstats_battlegrounds.id AND bracket_id = ? AND MONTH(date) = MONTH(NOW()) AND YEAR(date) = YEAR(NOW()) INNER JOIN characters ON pvpstats_players.character_guid = characters.guid AND characters.deleteDate IS NULL WHERE pvpstats_players.winner = 1 GROUP BY character_guid ORDER BY count(character_guid) DESC LIMIT 0, ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 443, sql: "INSERT INTO recovery_item (Guid, ItemEntry, Count, DeleteDate) VALUES (?, ?, ?, UNIX_TIMESTAMP())"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 444, sql: "SELECT id, itemEntry, Count, Guid FROM recovery_item WHERE id = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 445, sql: "SELECT id, itemEntry, Count FROM recovery_item WHERE Guid = ? ORDER BY id DESC"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 448, sql: "SELECT Guid, ItemEntry FROM recovery_item WHERE DeleteDate IS NOT NULL AND DeleteDate < ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 450, sql: "SELECT totalHonorPoints FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 451, sql: "SELECT arenaPoints FROM characters WHERE guid = ?"
+Lost connection to MySQL server during query
+In mysql_stmt_prepare() id: 457, sql: "SELECT guid, state FROM instance_saved_go_state_data WHERE id = ?"
+Lost connection to MySQL server during query

@@ -1,0 +1,22 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+새로운 크로스 플랫폼 PowerShell 사용 https://aka.ms/pscore6
+
+PS C:\Users\hwlim> docker ps
+CONTAINER ID   IMAGE                                    COMMAND                   CREATED       STATUS                      PORTS                                            NAMES
+c2e04b1b20be   acore/ac-wotlk-worldserver:7.0.0-dev.1   "/usr/bin/env bash /…"   4 hours ago   Up 54 minutes               0.0.0.0:7878->7878/tcp, 0.0.0.0:8085->8085/tcp   acore-docker-ac-worldserver-1
+dcb41e7af75d   acore/ac-wotlk-authserver:7.0.0-dev.1    "/usr/bin/env bash /…"   4 hours ago   Up 5 minutes                0.0.0.0:3724->3724/tcp                           acore-docker-master-ac-authserver-1
+48eff3ce0438   phpmyadmin                               "/docker-entrypoint.…"   4 hours ago   Up 54 minutes               0.0.0.0:8080->80/tcp                             acore-docker-master-phpmyadmin-1
+a8803457732e   acore/eluna-ts:master                    "docker-entrypoint.s…"   4 hours ago   Up 54 minutes (unhealthy)                                                    acore-docker-master-ac-eluna-ts-dev-1
+d7e684c8efda   mysql:8.0                                "docker-entrypoint.s…"   4 hours ago   Up 54 minutes (healthy)     33060/tcp, 0.0.0.0:63306->3306/tcp               acore-docker-master-ac-database-1
+PS C:\Users\hwlim>
+
+
+
+docker commit acore-docker-ac-worldserver-1
+docker commit acore-docker-master-ac-authserver-1
+docker commit acore-docker-master-phpmyadmin-1
+docker commit acore-docker-master-ac-eluna-ts-dev-1
+docker commit acore-docker-master-ac-database-1
+
